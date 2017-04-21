@@ -23,6 +23,9 @@ if (isProd) {
 export default {
   entry: 'lib/main.js',
   format: 'amd',
+  external: [
+    'jquery'
+  ],
   moduleName,
   plugins,
   dest: 'dist/McBrightcove.js',
