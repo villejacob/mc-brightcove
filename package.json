@@ -1,0 +1,44 @@
+{
+  "name": "@masterclass/mc-brightcove",
+  "author": "Andy Axton",
+  "version": "0.0.0",
+  "description": "Brightcove player",
+  "main": "dist/McBrightcove.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yankaindustries/mc-brightcove.git"
+  },
+  "config": {
+    "moduleName": "McBrightcove"
+  },
+  "scripts": {
+    "start": "rollup -c --watch",
+    "build": "rollup -c",
+    "fix": "eslint --fix 'lib/**/*.js'",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-json": "^2.1.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2",
+    "uglify-js": "^2.8.18"
+  }
+}

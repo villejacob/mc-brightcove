@@ -1,0 +1,136 @@
+$mc-color-chapter-video: #502C2C;
+
+.chapter-video-theme {
+  position: static;
+  width: 100%;
+  height: 100%;
+
+  .vjs-big-play-button {
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
+    background: transparent !important;
+
+    &:before {
+      content: url('https://do6eyjibs3jse.cloudfront.net/assets/icons/icn-play-button-7ba012291cbf0c5ef41a6809bf798ce99aed9a8f76de812b219817cbba41e472.svg');
+      transform: scale(1);
+      transition: transform 150ms ease-in, opacity 2s ease;
+    }
+
+    &:hover:before {
+      transform: scale(1.1);
+    }
+  }
+
+  .vjs-control-bar {
+    background-color: rgba($mc-color-chapter-video, .85);
+  }
+
+  .vjs-progress-control .vjs-load-progress,
+  .vjs-progress-control .vjs-progress-holder {
+    background-color: rgba($mc-color-chapter-video, .2);
+  }
+
+  .vjs-progress-control .vjs-play-progress {
+    background-color: darken($mc-color-chapter-video, 10%);
+  }
+
+  .vjs-volume-level {
+    background-color: $mc-color-accent-primary;
+  }
+
+  .vjs-load-progress div {
+    background-color: rgba($mc-color-chapter-video, .18);
+  }
+
+  .vjs-control {
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
+    &:before,
+    &:hover:before {
+      text-shadow: none !important;
+    }
+  }
+
+  .vjs-play-control:hover,
+  .vjs-volume-menu-button:hover::before,
+  .vjs-fullscreen-control:hover {
+    background-color: $mc-color-chapter-video; 
+  }
+
+  .vjs-overlay-buttons {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    text-align: left;
+
+    .vjs-control {
+      font-size: 3em;
+    }
+  }
+
+  .vjs-custom-endscreen-overlay {
+    opacity: 0;
+    animation: 700ms chapter-video-endscreen-fade ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .vjs-endscreen-overlay-content {
+    position: absolute;
+    height: 100%;
+    background: transparent;
+
+    * {
+      box-sizing: content-box;
+    }
+
+    .video-endscreen {
+      line-height: 1.1;
+    }
+
+    .endscreen-box {
+      max-height: none;
+      
+      @at-root #video-player & {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+
+        a h5 {
+          display: inline;
+        }
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      a {
+        display: block;
+        color: $mc-color-accent-primary;
+      }
+
+      @media (min-width: 762px) {
+        h3 {
+          font-size: 24px;
+        }
+        a {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
+
+@keyframes chapter-video-endscreen-fade {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
