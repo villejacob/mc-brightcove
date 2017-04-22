@@ -1,6 +1,6 @@
 $mc-color-chapter-video: #502C2C;
 
-.chapter-video-theme {
+.brightcove-default-theme {
   position: static;
   width: 100%;
   height: 100%;
@@ -75,7 +75,7 @@ $mc-color-chapter-video: #502C2C;
 
   .vjs-custom-endscreen-overlay {
     opacity: 0;
-    animation: 700ms chapter-video-endscreen-fade ease-out;
+    animation: 700ms endscreen-fade ease-out;
     animation-fill-mode: forwards;
   }
 
@@ -91,43 +91,10 @@ $mc-color-chapter-video: #502C2C;
     .video-endscreen {
       line-height: 1.1;
     }
-
-    .endscreen-box {
-      max-height: none;
-      
-      @at-root #video-player & {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-
-        a h5 {
-          display: inline;
-        }
-      }
-
-      h3 {
-        font-size: 24px;
-      }
-
-      a {
-        display: block;
-        color: $mc-color-accent-primary;
-      }
-
-      @media (min-width: 762px) {
-        h3 {
-          font-size: 24px;
-        }
-        a {
-          margin-top: 1em;
-        }
-      }
-    }
   }
 }
 
-@keyframes chapter-video-endscreen-fade {
+@keyframes endscreen-fade {
   0% {
     opacity: 0;
   } 100% {
