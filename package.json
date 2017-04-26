@@ -1,7 +1,7 @@
 {
   "name": "@masterclass/mc-brightcove",
   "author": "Andy Axton",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Brightcove player",
   "main": "dist/McBrightcove.js",
   "license": "MIT",
