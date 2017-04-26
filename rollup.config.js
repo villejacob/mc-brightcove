@@ -22,7 +22,7 @@ if (isProd) {
 
 export default {
   entry: 'lib/main.js',
-  format: 'amd',
+  format: 'umd',
   external: [
     'jquery'
   ],

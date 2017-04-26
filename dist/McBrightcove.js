@@ -1,4 +1,8 @@
-define(['jquery'], function ($) { 'use strict';
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery')) :
+	typeof define === 'function' && define.amd ? define(['jquery'], factory) :
+	(global.McBrightcove = factory(global.$));
+}(this, (function ($) { 'use strict';
 
 $ = 'default' in $ ? $['default'] : $;
 
@@ -251,5 +255,5 @@ var BrightcovePlayer = function () {
 
 return BrightcovePlayer;
 
-});
+})));
 //# sourceMappingURL=McBrightcove.js.map
