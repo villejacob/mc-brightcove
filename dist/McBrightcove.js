@@ -66,7 +66,7 @@ var BrightcovePlayer = function () {
         _ref$id = _ref.id,
         id = _ref$id === undefined ? 'brightcove-chapter-player' : _ref$id,
         _ref$theme = _ref.theme,
-        theme = _ref$theme === undefined ? 'default' : _ref$theme,
+        theme = _ref$theme === undefined ? '' : _ref$theme,
         _ref$videoId = _ref.videoId,
         videoId = _ref$videoId === undefined ? '5399154124001' : _ref$videoId,
         _ref$controls = _ref.controls,
@@ -109,7 +109,7 @@ var BrightcovePlayer = function () {
     key: 'init',
     value: function init() {
       var $el = $('#' + this.id);
-      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js ' + this.theme + '"\n      data-setup=\'{ "playbackRates": [0.5, 1, 1.5, 2] }\'\n      data-application-id\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
+      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js brightcove-default-theme' + (' ' + this.theme) + '"\n      data-setup=\'{ "playbackRates": [0.5, 1, 1.5, 2] }\'\n      data-application-id\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
       $el.css({
         display: 'block',
         position: 'relative',
@@ -127,7 +127,7 @@ var BrightcovePlayer = function () {
     value: function handlePlayerReady(video) {
       var _this = this;
 
-      var $postRoll = $('[id^="mc-post-roll-"]');
+      var $postRoll = $('[id^="mc-post-roll-"], [id^="endscreen-container"]');
 
       if ($postRoll.length) {
         this.video.customEndscreen({ content: $postRoll.html() });
