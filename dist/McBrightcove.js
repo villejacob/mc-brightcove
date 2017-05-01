@@ -73,6 +73,8 @@ var BrightcovePlayer = function () {
         theme = _ref$theme === undefined ? 'brightcove-default-theme' : _ref$theme,
         _ref$videoId = _ref.videoId,
         videoId = _ref$videoId === undefined ? '5399154124001' : _ref$videoId,
+        _ref$endscreenContent = _ref.endscreenContent,
+        endscreenContent = _ref$endscreenContent === undefined ? null : _ref$endscreenContent,
         _ref$controls = _ref.controls,
         controls = _ref$controls === undefined ? true : _ref$controls,
         _ref$autoplay = _ref.autoplay,
@@ -90,6 +92,7 @@ var BrightcovePlayer = function () {
     this.controls = controls;
     this.autoplay = autoplay;
     this.muted = muted;
+    this.endscreenContent = endscreenContent;
     this._hasEnded = false;
     this._currentTime = 0;
 
@@ -131,10 +134,8 @@ var BrightcovePlayer = function () {
     value: function handlePlayerReady(video) {
       var _this = this;
 
-      var $postRoll = $('[id^="mc-post-roll-"], [id^="endscreen-container"]');
-
-      if ($postRoll.length) {
-        this.video.customEndscreen({ content: $postRoll.html() });
+      if (this.endscreenContent) {
+        this.video.customEndscreen({ content: this.endscreenContent });
       }
 
       this.video.on('play', this.playHandler.bind(this));
