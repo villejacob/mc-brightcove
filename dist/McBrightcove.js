@@ -216,6 +216,9 @@ var BrightcovePlayer = function () {
   }, {
     key: 'playHandler',
     value: function playHandler() {
+      if (this.video.customOverlay) {
+        this.video.customOverlay.close();
+      }
       this.onPlay.fire(this);
     }
   }, {
