@@ -75,6 +75,8 @@ var BrightcovePlayer = function () {
         videoId = _ref$videoId === undefined ? '5399154124001' : _ref$videoId,
         _ref$endscreenContent = _ref.endscreenContent,
         endscreenContent = _ref$endscreenContent === undefined ? null : _ref$endscreenContent,
+        _ref$playbackRates = _ref.playbackRates,
+        playbackRates = _ref$playbackRates === undefined ? false : _ref$playbackRates,
         _ref$controls = _ref.controls,
         controls = _ref$controls === undefined ? true : _ref$controls,
         _ref$autoplay = _ref.autoplay,
@@ -89,6 +91,7 @@ var BrightcovePlayer = function () {
     this.id = id;
     this.theme = theme;
     this.videoId = videoId;
+    this.playbackRates = playbackRates;
     this.controls = controls;
     this.autoplay = autoplay;
     this.muted = muted;
@@ -116,7 +119,7 @@ var BrightcovePlayer = function () {
     key: 'init',
     value: function init() {
       var $el = $('#' + this.id);
-      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js mc-brightcove-player' + (' ' + this.theme) + '"\n      data-setup=\'{ "playbackRates": [0.5, 1, 1.5, 2] }\'\n      data-application-id\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
+      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js mc-brightcove-player' + (' ' + this.theme) + '"\n      data-application-id\n      ' + (this.playbackRates ? 'data-setup={ "playbackRates": [0.5, 1, 1.5, 2] }' : '') + '\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
       $el.addClass('mc-brightcove-player-wrapper');
       $el.append('<div style="padding-top: 56.25%"></div>');
       $el.eq(0).append($player);
@@ -138,7 +141,8 @@ var BrightcovePlayer = function () {
       this.video.on('pause', this.pauseHandler.bind(this));
       this.video.on('ended', this.endHandler.bind(this));
       this.video.on('loadedmetadata', function () {
-        return _this.onVideoReady.fire(_this);
+        $('.vjs-captions-button li:last-child').text('english');
+        _this.onVideoReady.fire(_this);
       });
 
       if (this.onPlayerReady) {
