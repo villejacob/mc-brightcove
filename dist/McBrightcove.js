@@ -119,7 +119,7 @@ var BrightcovePlayer = function () {
     key: 'init',
     value: function init() {
       var $el = $('#' + this.id);
-      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js mc-brightcove-player' + (' ' + this.theme) + '"\n      data-application-id\n      ' + (this.playbackRates ? 'data-setup={ "playbackRates": [0.5, 1, 1.5, 2] }' : '') + '\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
+      var $player = $('<video\n      data-embed="default"\n      data-video-id=' + this.videoId + '\n      data-player-id="rkcQq7gAe"\n      data-account="5344802162001"\n      class="video-js mc-brightcove-player' + (' ' + this.theme) + '"\n      data-application-id\n      ' + (this.playbackRates ? 'data-setup="{ "playbackRates": [0.5, 1, 1.5, 2] }"' : '') + '\n      ' + (this.autoplay ? 'autoplay' : '') + '\n      ' + (this.muted ? 'muted' : '') + '\n      ' + (this.controls ? 'controls' : '') + '\n    ></video>');
       $el.addClass('mc-brightcove-player-wrapper');
       $el.append('<div style="padding-top: 56.25%"></div>');
       $el.eq(0).append($player);
