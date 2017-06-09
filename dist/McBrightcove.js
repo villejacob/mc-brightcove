@@ -72,7 +72,7 @@ var BrightcovePlayer = function () {
         _ref$theme = _ref.theme,
         theme = _ref$theme === undefined ? 'brightcove-default-theme' : _ref$theme,
         _ref$videoId = _ref.videoId,
-        videoId = _ref$videoId === undefined ? '5399154124001' : _ref$videoId,
+        videoId = _ref$videoId === undefined ? '5450137526001' : _ref$videoId,
         _ref$endscreenContent = _ref.endscreenContent,
         endscreenContent = _ref$endscreenContent === undefined ? null : _ref$endscreenContent,
         _ref$playbackRates = _ref.playbackRates,
